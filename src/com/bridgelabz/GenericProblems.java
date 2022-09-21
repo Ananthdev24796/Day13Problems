@@ -3,6 +3,7 @@
  */
 package com.bridgelabz;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -13,39 +14,49 @@ import java.util.Scanner;
 
 
 /*
- * Given 3 Strings find the maximum
-- Ensure to test code with the Test Case.
-- Apple Peach Banana
-- UC 3 Case
+ * Extend the max method to also print the max to std out
+ * using Generic Method - Write printMax Generic Method which is
+  * UC 5 Case
  */
-public class GenericProblems {
+public class GenericProblems<T extends Comparable<T>> { 
+	T x ,y,z;
 	
-	// creating method to find max for String
-			public static <T extends Comparable <T>> T  findMax(T a ,T b, T c, T d) {
-				T max =  a;
-				if(b.compareTo(a)>0) {
-					max = b;
-				}
-				if(c.compareTo(a)>0) {
-					max =c;
-				}
-				if(d.compareTo(a)>0) {
-					max =d;
-				}
-				return max;
-				
-			}
+	public GenericProblems(T x, T y, T z) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	public T maximum() {
+		return GenericProblems.maximum(x,y,z);
+		
+	}
+	// determine the largest of three comparable objects
+	public 	static <T extends Comparable <T>> T maximum(T x ,T y,T z) {
+		T max = x;
+		if(y.compareTo(x)>0) {
+			max = y;
+		}
+		if(z.compareTo(x)>0) {
+			max = z;
+		}
+		printMax(x,y,z,max);
+		return max;
 	
-		
-	 public static void main(String[] args) {
-		 String a = "Jeep";
-		 String b = "Bmw";
-		 String c = "Alfa Romeo";
-		 String d = "Lamborghini";
-		System.out.println(findMax(a, b, c,d)); 
-		 
-		 
-		 
-		
+	}
+
+	
+	public static <T>void printMax(T x ,T y,T z, T max){
+		 System.out.printf("max of %s ,%s and %s is %s\n",x ,y,z ,max);
+	}
+	public static void main (String[] args) {
+		Integer xInt = 3, yInt = 6 , zInt =8;
+		Float xF1 =6.6f ,yF2=8.8f ,zf3= 9.9f;
+		String xStr ="pear",yStr = "apple",zStr="orange";
+
+	 new GenericProblems<Integer>(xInt, yInt, zInt).maximum();
+	 new GenericProblems<Float>(xF1, yF2, zf3).maximum();
+	 new GenericProblems<String>(xStr, yStr, zStr).maximum();
 	}
 }
