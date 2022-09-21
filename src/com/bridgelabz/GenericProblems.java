@@ -13,15 +13,16 @@ import java.util.Scanner;
 
 
 /*
- * Given 3 Float find the maximum
+ * Given 3 Strings find the maximum
 - Ensure to test code with the Test Case.
-- UC 2 Case
+- Apple Peach Banana
+- UC 3 Case
  */
 public class GenericProblems {
 	
-	// creating method to find max for Float
-			public static void findMax(Float a ,Float b,Float c) {
-				Float	max =  a;
+	// creating method to find max for String
+			public static void findMax(String a ,String b,String c) {
+				String max =  a;
 				if(b.compareTo(a)>0) {
 					max = b;
 				}
@@ -34,9 +35,9 @@ public class GenericProblems {
 	
 		
 	 public static void main(String[] args) {
-		 Float a = 100.6f;
-		 Float b = 150.4f;
-		 Float c = 30.6f;
+		 String a = "Jeep";
+		 String b = "Bmw";
+		 String c = "Alfa Romeo";
 		 findMax(a, b, c);
 		 
 		 
