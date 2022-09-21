@@ -21,15 +21,18 @@ import java.util.Scanner;
 public class GenericProblems {
 	
 	// creating method to find max for String
-			public static void findMax(String a ,String b,String c) {
-				String max =  a;
+			public static <T extends Comparable <T>> T  findMax(T a ,T b, T c, T d) {
+				T max =  a;
 				if(b.compareTo(a)>0) {
 					max = b;
 				}
 				if(c.compareTo(a)>0) {
 					max =c;
 				}
-				System.out.println(max);
+				if(d.compareTo(a)>0) {
+					max =d;
+				}
+				return max;
 				
 			}
 	
@@ -38,7 +41,8 @@ public class GenericProblems {
 		 String a = "Jeep";
 		 String b = "Bmw";
 		 String c = "Alfa Romeo";
-		 findMax(a, b, c);
+		 String d = "Lamborghini";
+		System.out.println(findMax(a, b, c,d)); 
 		 
 		 
 		 
