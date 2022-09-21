@@ -16,7 +16,7 @@ import java.util.Scanner;
  * Given 3 Strings find the maximum
 - Ensure to test code with the Test Case.
 - Apple Peach Banana
-- UC 3 Case
+- UC 4 Case
  */
 public class GenericProblems {
 	
